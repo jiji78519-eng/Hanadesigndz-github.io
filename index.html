@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hana NM · graphic design</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f3ef;
+      font-family: 'Inter', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+    }
+
+    .site {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 48px;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      padding: 2.5rem 2.5rem 2rem;
+    }
+
+    /* header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #1e1e1e;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: #f5f3ef;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: -0.03em;
+      color: #1e1e1e;
+    }
+
+    .logo-text span {
+      font-weight: 300;
+      color: #7a6a5c;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #3a3a3a;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav a:hover {
+      color: #1e1e1e;
+      border-bottom-color: #1e1e1e;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: #1e1e1e;
+      color: #f5f3ef;
+      padding: 0 0.4rem;
+      border-radius: 16px;
+      display: inline-block;
+      transform: rotate(-1deg);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #5a5a5a;
+      max-width: 540px;
+      font-weight: 400;
+      border-left: 4px solid #1e1e1e;
+      padding-left: 1.5rem;
+    }
+
+    /* section titles */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title .badge {
+      font-size: 0.9rem;
+      background: #f0ede8;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #3a3a3a;
+      letter-spacing: 0.01em;
+    }
+
+    /* card grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: #faf9f7;
+      border-radius: 32px;
+      padding: 1.8rem 1.8rem 2rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #edeae5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+      border-color: #d6d0c8;
+    }
+
+    .card-img {
+      background: #eae7e1;
+      border-radius: 24px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+
+    .card-img svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #5a5a5a;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #d6d0c8;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #3a3a3a;
+      align-self: flex-start;
+    }
+
+    /* about / contact */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+      align-items: center;
+      background: #faf9f7;
+      border-radius: 32px;
+      padding: 2.5rem 3rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #edeae5;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: #3a3a3a;
+      max-width: 500px;
+      font-size: 1.05rem;
+    }
+
+    .contact-btn {
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: background 0.2s, transform 0.2s;
+      border: 1px solid #1e1e1e;
+      white-space: nowrap;
+    }
+
+    .contact-btn:hover {
+      background: #3a3a3a;
+      transform: scale(1.02);
+    }
+
+    .contact-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e6e2dc;
+      color: #7a7a7a;
+      font-size: 0.9rem;
+    }
+
+    .footer .socials {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer .socials a {
+      color: #3a3a3a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b0a89e;
+    }
+
+    .footer .socials a:hover {
+      color: #1e1e1e;
+      border-bottom-color: #1e1e1e;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem;
+      }
+      .site {
+        padding: 1.8rem 1.5rem;
+        border-radius: 32px;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+        margin-bottom: 2.5rem;
+      }
+      .nav {
+        gap: 1.8rem;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .about-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.8rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <!-- abstract H+N monogram -->
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 24V8L16 16L24 8V24" stroke="currentColor" fill="none" stroke-width="2.2"/>
+            <path d="M12 16H20" stroke="currentColor" fill="none" stroke-width="2.2"/>
+          </svg>
+        </div>
+        <div class="logo-text">hana <span>nm</span></div>
+      </div>
+      <nav class="nav">
+        <a href="#">work</a>
+        <a href="#">studio</a>
+        <a href="#">contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>design that <em>speaks</em> before words.</h1>
+      <p>Hana NM — independent graphic design practice focused on brand identity, print, and visual storytelling.</p>
+    </section>
+
+    <!-- LOGO DESIGN SECTION -->
+    <h2 class="section-title">
+      logo design
+      <span class="badge">identity</span>
+    </h2>
+    <div class="grid">
+      <!-- card 1 -->
+      <div class="card">
+        <div class="card-img">
+          <!-- SVG logo illustration: abstract flower mark -->
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="#eae7e1"/>
+            <!-- background pattern subtle -->
+            <circle cx="200" cy="150" r="100" fill="#f5f3ef" />
+            <!-- flower logo -->
+            <g transform="translate(200,150) scale(0.9)">
+              <circle cx="0" cy="0" r="40" fill="none" stroke="#1e1e1e" stroke-width="3" />
+              <path d="M0 -70 L15 -25 L70 0 L15 25 L0 70 L-15 25 L-70 0 L-15 -25 Z" fill="#1e1e1e" opacity="0.9"/>
+              <circle cx="0" cy="0" r="12" fill="#f5f3ef" />
+            </g>
+            <!-- wordmark -->
+            <text x="200" y="250" font-family="Inter, sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#1e1e1e" letter-spacing="4">BLOOM</text>
+          </svg>
+        </div>
+        <h3>Bloom Studio</h3>
+        <p>Minimalist floral mark with a custom geometric wordmark — designed for a botanical skincare brand.</p>
+        <span class="card-tag">logo system</span>
+      </div>
+
+      <!-- card 2 -->
+      <div class="card">
+        <div class="card-img">
+          <!-- SVG monogram logo -->
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="#eae7e1"/>
+            <rect x="100" y="70" width="200" height="160" rx="24" fill="#f5f3ef" stroke="#1e1e1e" stroke-width="2"/>
+            <!-- monogram H+N -->
+            <path d="M150 140 L150 200 M150 170 L180 170 M180 140 L180 200" stroke="#1e1e1e" stroke-width="6" stroke-linecap="round"/>
+            <path d="M220 140 L220 200 L245 200" stroke="#1e1e1e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="200" cy="120" r="6" fill="#1e1e1e"/>
+            <text x="200" y="240" font-family="Inter, sans-serif" font-size="22" font-weight="500" text-anchor="middle" fill="#1e1e1e" letter-spacing="6">HANA NM</text>
+          </svg>
+        </div>
+        <h3>Monogram H/N</h3>
+        <p>Personal identity for Hana NM — a clean monogram that merges the initials into a single fluid mark.</p>
+        <span class="card-tag">personal brand</span>
+      </div>
+
+      <!-- card 3 -->
+      <div class="card">
+        <div class="card-img">
+          <!-- SVG abstract logo for tech -->
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="#eae7e1"/>
+            <g transform="translate(200,140)">
+              <path d="M-60 -40 L60 -40 L80 0 L60 40 L-60 40 L-80 0 Z" fill="none" stroke="#1e1e1e" stroke-width="4"/>
+              <circle cx="-20" cy="0" r="20" fill="#1e1e1e" />
+              <circle cx="40" cy="0" r="20" fill="none" stroke="#1e1e1e" stroke-width="4" />
+            </g>
+            <text x="200" y="250" font-family="Inter, sans-serif" font-size="26" font-weight="600" text-anchor="middle" fill="#1e1e1e" letter-spacing="2">NEXUS</text>
+          </svg>
+        </div>
+        <h3>Nexus Tech</h3>
+        <p>Forward‑looking identity for a SaaS startup — geometric, balanced, and scalable across digital and print.</p>
+        <span class="card-tag">tech identity</span>
+      </div>
+    </div>
+
+    <!-- FLYER DESIGN SECTION -->
+    <h2 class="section-title">
+      flyer design
+      <span class="badge">print & digital</span>
+    </h2>
+    <div class="grid">
+      <!-- flyer 1 -->
+      <div class="card">
+        <div class="card-img">
+          <!-- SVG flyer mockup: event flyer -->
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="#eae7e1"/>
+            <rect x="30" y="25" width="160" height="250" rx="12" fill="#1e1e1e" />
+            <rect x="45" y="45" width="130" height="80" rx="6" fill="#f5f3ef" opacity="0.15" />
+            <circle cx="110" cy="150" r="30" fill="#f5f3ef" opacity="0.3" />
+            <text x="110" y="215" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#f5f3ef">ART</text>
+            <text x="110" y="240" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#f5f3ef" letter-spacing="2">WEEKEND</text>
+            <!-- second flyer on the right -->
+            <rect x="210" y="45" width="160" height="210" rx="12" fill="#f5f3ef" stroke="#1e1e1e" stroke-width="2"/>
+            <rect x="225" y="60" width="130" height="40" rx="6" fill="#1e1e1e" />
+            <text x="290" y="88" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#f5f3ef">SUMMER</text>
+            <circle cx="290" cy="150" r="30" fill="#1e1e1e" opacity="0.1" />
+            <circle cx="290" cy="150" r="18" fill="#1e1e1e" opacity="0.3" />
+            <text x="290" y="215" font-family="Inter, sans-serif" font-size="12" font-weight="400" text-anchor="middle" fill="#1e1e1e">HANa NM</text>
+          </svg>
+        </div>
+        <h3>Art Weekend</h3>
+        <p>Bold typographic flyer series for a local art festival — high contrast, clear hierarchy, and modern layout.</p>
+        <span class="card-tag">event flyer</span>
+      </div>
+
+      <!-- flyer 2 -->
+      <div class="card">
+        <div class="card-img">
+          <!-- SVG flyer mockup: product launch -->
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="#eae7e1"/>
+            <!-- flyer layout with bold shapes -->
+            <rect x="50" y="25" width="300" height="250" rx="16" fill="#f5f3ef" stroke="#1e1e1e" stroke-width="2"/>
+            <rect x="80" y="60" width="240" height="60" rx="8" fill="#1e1e1e" />
+            <text x="200" y="100" font-family="Inter, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#f5f3ef" letter-spacing="2">LAUNCH</text>
+            <circle cx="200" cy="170" r="45" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-dasharray="8 8" />
+            <circle cx="200" cy="170" r="25" fill="#1e1e1e" opacity="0.8" />
+            <text x="200" y="240" font-family="Inter, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#1e1e1e">new collection · hana nm</text>
+            <!-- accent lines -->
+            <line x1="80" y1="260" x2="320" y2="260" stroke="#1e1e1e" stroke-width="1.5" />
+          </svg>
+        </div>
+        <h3>Collection Drop</h3>
+        <p>Minimal product launch flyer for a fashion label — strong visual rhythm and a clean, confident grid.</p>
+        <span class="card-tag">promo flyer</span>
+      </div>
+
+      <!-- flyer 3 -->
+      <div class="card">
+        <div class="card-img">
+          <!-- SVG flyer mockup: workshop -->
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <rect width="400" height="300" fill="#eae7e1"/>
+            <rect x="35" y="35" width="330" height="230" rx="16" fill="#1e1e1e" opacity="0.95"/>
+            <rect x="55" y="55" width="120" height="120" rx="12" fill="#f5f3ef" opacity="0.1" />
+            <circle cx="260" cy="110" r="50" fill="none" stroke="#f5f3ef" stroke-width="2" opacity="0.4" />
+            <text x="200" y="230" font-family="Inter, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#f5f3ef">DESIGN</text>
+            <text x="200" y="255" font-family="Inter, sans-serif" font-size="14" font-weight="300" text-anchor="middle" fill="#f5f3ef" letter-spacing="6">WORKSHOP</text>
+            <line x1="100" y1="200" x2="300" y2="200" stroke="#f5f3ef" stroke-width="1" opacity="0.3" />
+          </svg>
+        </div>
+        <h3>Design Workshop</h3>
+        <p>Informative flyer for a creative workshop — moody palette with a focus on typography and negative space.</p>
+        <span class="card-tag">workshop flyer</span>
+      </div>
+    </div>
+
+    <!-- ABOUT / CONTACT -->
+    <div class="about-section">
+      <div class="about-text">
+        <h2>Hana NM — design with intention.</h2>
+        <p>Every project starts with a conversation. Let’s create a visual identity that feels honest and timeless — from logo systems to print collateral.</p>
+      </div>
+      <a href="#" class="contact-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H20V20H4V4Z" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M4 7L12 13L20 7" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        start a project
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© 2025 Hana NM — graphic design studio</div>
+      <div class="socials">
+        <a href="#">behance</a>
+        <a href="#">instagram</a>
+        <a href="#">dribbble</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+```
